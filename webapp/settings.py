@@ -13,7 +13,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOG_DIR = os.path.realpath(os.environ.get('LOG_DIR', 'logs'))
+LOG_DIR = os.path.realpath(os.environ.get('LOG_DIR', ''))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 # save process ID to file
-PID_FILE = os.path.join(LOG_DIR, 'django.pid')
+PID_FILE = os.path.join('django.pid')
 PID = os.getpid()
 with open(PID_FILE, 'w') as f:
     f.write(str(PID) + '\n')

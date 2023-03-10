@@ -24,7 +24,7 @@ stop:
 
 # Start the Gunicorn server
 start:
-	source $(VENV_PATH)/bin/activate && gunicorn $(DJANGO_APPLICATION_NAME).wsgi:application --workers $(GUNICORN_WORKERS) --bind 127.0.0.1:$(GUNICORN_PORT)  --pid gunicorn.pid
+	source $(VENV_PATH)/bin/activate && gunicorn $(DJANGO_APPLICATION_NAME).wsgi:application --workers $(GUNICORN_WORKERS) --bind 127.0.0.1:$(GUNICORN_PORT)  --daemon --pid gunicorn.pid
 
 # Restart the Gunicorn server
 restart: stop start
